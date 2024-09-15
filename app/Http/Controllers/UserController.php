@@ -32,9 +32,9 @@ class UserController extends Controller
             ], 422);
         }
         $user = User::create([
-            "name" => $request->title,
-            "email" => $request->description,
-            "password" => $request->text,
+            "name" => $request->name,
+            "email" => $request->email,
+            "password" => $request->password,
         ]);
         return response()->json([
             "message" => "User Created Successfully",
@@ -58,9 +58,9 @@ class UserController extends Controller
             ], 422);
         }
         $user->update([
-            "name" => $request->title,
-            "email" => $request->description,
-            "password" => $request->text,
+            "name" => $request->name,
+            "email" => $request->email,
+            "password" => $request->password,
         ]);
         return response()->json([
             "message" => "User Updated Successfully",
